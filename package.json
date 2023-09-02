@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --debug app/ --fix",
+    "lint": "eslint app/ --fix",
     "postinstall": "npx husky-init && npm install husky && npx husky add .husky/pre-commit 'npx lint-staged'",
     "prepare": "husky install"
   },
