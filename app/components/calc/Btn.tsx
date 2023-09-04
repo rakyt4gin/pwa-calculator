@@ -1,7 +1,7 @@
 "use client";
 
 import { IBtn } from "@/app/data/btns";
-import { useCalcStore } from "@/app/store/store";
+import { useCalcStore } from "@/app/store";
 import cn from "classnames";
 import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
@@ -20,10 +20,7 @@ const GridBtn = ({
     color,
     ...props
 }: IProps) => {
-    const [addNum, addOperation] = useCalcStore(state => [
-        state.addNum,
-        state.addOperation,
-    ]);
+    const { addNum, addOperation } = useCalcStore();
     const onClick = () => {
         if (!isOperation) {
             addNum(btnContent);
